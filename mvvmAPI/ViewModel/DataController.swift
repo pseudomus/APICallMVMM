@@ -38,6 +38,7 @@ class DataController:ObservableObject{
         if let bio = user.bio{
             newSearch.bio = bio
         }
+        newSearch.favorite = false
         saveData()
     }
     
@@ -49,4 +50,13 @@ class DataController:ObservableObject{
             print("error: \(error)")
         }
     }
+    
+    func removeItem(at Offset: IndexSet){
+        for index in Offset{
+            let toRemove = self.searchHistory[index]
+            self.container.viewContext.delete(toRemove)
+            self.saveData()
+        }
+    }
 }
+

@@ -3,6 +3,7 @@
     <entity name="Searched" representedClassName="Searched" syncable="YES" codeGenerationType="class">
         <attribute name="avatarUrl" optional="YES" attributeType="String"/>
         <attribute name="bio" optional="YES" attributeType="String"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="login" optional="YES" attributeType="String"/>
     </entity>

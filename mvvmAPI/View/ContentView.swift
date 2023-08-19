@@ -17,10 +17,20 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                Button{
-                    isOpen.toggle()
-                }label: {
-                    Text("History")
+                HStack {
+                    Button{
+                        isOpen.toggle()
+                    }label: {
+                        Text("History")
+                    }
+                    
+                    Button{
+                        data.clearSearch()
+                        search = ""
+                    }label: {
+                        Text("ClearView")
+                    }
+                    .padding(.leading,50)
                 }
                 HStack{
                     TextField("Pesquisar usuário", text: $search)
@@ -47,6 +57,8 @@ struct ContentView: View {
                             if let user = data.user{
                                 controller.addUser(user: user)
                             }
+                            
+                            search = ""
                         }
                     }label: {
                         Text("Search")

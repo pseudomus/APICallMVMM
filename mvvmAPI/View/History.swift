@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct History: View {
-    @StateObject var data:Networking
+    var data:Networking
     @StateObject var controller:DataController
     @Binding  var isOpen:Bool
     
@@ -42,6 +42,8 @@ struct History: View {
                     }label: {
                         Text(i.login ?? "")
                     }
+                }.onDelete{ IndexSet in
+                    controller.removeItem(at: IndexSet)
                 }
             }
         }

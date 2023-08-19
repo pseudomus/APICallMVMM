@@ -65,5 +65,11 @@ final class Networking: ObservableObject{
             throw GHError.invalidREsponse
         }
     }
+    
+    func clearSearch(){
+        self.user = nil
+        self.followers = nil
+        self.repos = nil
+    }
 }
 
